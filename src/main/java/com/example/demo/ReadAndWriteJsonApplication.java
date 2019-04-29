@@ -26,7 +26,7 @@ public class ReadAndWriteJsonApplication {
             // read json and write to db
             ObjectMapper mapper = new ObjectMapper();
             TypeReference<List<User>> typeReference = new TypeReference<List<User>>(){};
-            InputStream inputStream = TypeReference.class.getResourceAsStream("/json/user.json");
+            InputStream inputStream = TypeReference.class.getResourceAsStream("/json/users.json");
             try {
                 List<User> users = mapper.readValue(inputStream,typeReference);
                 userService.save(users);
